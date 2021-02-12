@@ -19,4 +19,15 @@ before_script:
   - python manage.py migrate
 script:
   - cp local_settings.travis.py local_settings.py
-  - python manage.py test voting
+  - python manage.py census
+
+notifications:
+  email:
+    recipients:
+      - antsuabon@alum.us.es
+
+deploy:
+  provider: heroku
+  app: ej1-egc-antsuabon
+  strategy: git
+  api_key: $HEROKU_AUTH_TOKEN
