@@ -19,4 +19,4 @@ before_script:
   - python manage.py migrate
 script:
   - cp local_settings.travis.py local_settings.py
-  - python manage.py voting
+  - python manage.py test voting
